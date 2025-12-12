@@ -1,0 +1,127 @@
+/* ===================================
+   Hero Section
+   =================================== */
+
+.hero {
+    padding-top: calc(var(--header-height) + var(--space-12));
+    padding-bottom: var(--space-16);
+    background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-white) 100%);
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding-top: calc(var(--header-height) + var(--space-16));
+        padding-bottom: var(--space-24);
+    }
+}
+
+.hero__container {
+    display: grid;
+    gap: var(--space-10);
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .hero__container {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-16);
+    }
+}
+
+/* Content */
+.hero__content {
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .hero__content {
+        text-align: left;
+    }
+}
+
+.hero__title {
+    margin-bottom: var(--space-4);
+    color: var(--color-text-primary);
+}
+
+.hero__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-8);
+    max-width: 540px;
+}
+
+@media (min-width: 1024px) {
+    .hero__subtitle {
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+
+/* Features list */
+.hero__features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+    .hero__features {
+        align-items: flex-start;
+    }
+}
+
+.hero__feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+}
+
+.hero__feature-icon {
+    color: var(--color-success);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Actions */
+.hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+    .hero__actions {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero__actions {
+        justify-content: flex-start;
+    }
+}
+
+/* Image */
+.hero__image {
+    display: flex;
+    justify-content: center;
+}
+
+.hero__image-placeholder {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    border-radius: var(--radius-2xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    box-shadow: var(--shadow-xl);
+}

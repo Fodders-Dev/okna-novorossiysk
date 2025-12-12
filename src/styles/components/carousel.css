@@ -1,0 +1,165 @@
+/* ===================================
+   Carousel Styles
+   =================================== */
+
+/* Reviews Carousel */
+.reviews-carousel {
+    position: relative;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.reviews-carousel:active {
+    cursor: grabbing;
+}
+
+.reviews-carousel.dragging .reviews-carousel__track {
+    animation-play-state: paused;
+}
+
+.reviews-carousel__track {
+    display: flex;
+    gap: var(--space-6);
+    animation: scroll-reviews 40s linear infinite;
+    width: max-content;
+    padding: var(--space-2) var(--space-4);
+}
+
+@keyframes scroll-reviews {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.reviews-carousel .review-card {
+    flex: 0 0 350px;
+    min-width: 300px;
+    user-select: none;
+}
+
+@media (max-width: 640px) {
+    .reviews-carousel .review-card {
+        flex: 0 0 280px;
+        min-width: 280px;
+    }
+}
+
+/* Carousel Controls */
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+}
+
+.carousel-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.carousel-btn:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-text-inverse);
+}
+
+/* Services Carousel (Mobile) */
+.services-carousel {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .services__grid {
+        display: none;
+    }
+
+    .services-carousel {
+        display: block;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding-bottom: var(--space-4);
+    }
+
+    .services-carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+    .services-carousel__track {
+        display: flex;
+        gap: var(--space-4);
+        padding: 0 var(--space-2);
+    }
+
+    .services-carousel .service-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+    }
+}
+
+/* Advantages Swipeable (Mobile) */
+@media (max-width: 640px) {
+    .advantages__grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: var(--space-4);
+        padding-bottom: var(--space-4);
+    }
+
+    .advantages__grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .advantage {
+        flex: 0 0 80%;
+        scroll-snap-align: center;
+        background-color: var(--color-surface);
+        border-radius: var(--radius-xl);
+        padding: var(--space-6);
+    }
+}
+
+/* Scroll Indicator Dots */
+.scroll-indicator {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+}
+
+@media (min-width: 641px) {
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+.scroll-indicator__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-border);
+    transition: all var(--transition-fast);
+}
+
+.scroll-indicator__dot--active {
+    width: 24px;
+    background-color: var(--color-primary);
+}
